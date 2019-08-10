@@ -21,3 +21,23 @@
   border-radius: 100%;
   max-height: 200px;
 }
+
+.hero1 {
+  background: image_url('hats1.jpg') no-repeat center center fixed;
+  height: 370px; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  box-shadow: 0px 1px 3px #2a2a2a;
+}
+
+.hero2 {
+  background: image_url('hats2.jpg') no-repeat center center fixed;
+  height: 370px; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  box-shadow: 0px 1px 3px #2a2a2a;
+}
