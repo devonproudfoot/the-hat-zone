@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
 
-  get "/pages/:page" => "pages#show"
-  root 'pages#show',  page: 'home'
+  get 'home', to: 'pages#home'
+  root 'pages#home'
+
+  get 'about', to: 'pages#about'
 
   resources :hats, only: [:show, :index, :new, :create]
 

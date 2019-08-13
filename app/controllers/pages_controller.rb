@@ -1,17 +1,9 @@
 class PagesController < ApplicationController
 
-  def show
-    if page_valid?
-      render template: "pages/#{params[:page]}"
-    else
-      render file: "public/404.html", status: :not_found
-    end
+  def about
   end
 
-  private
-
-  def page_valid?
-    File. exist?(Pathname.new(Rails.root + "app/views/pages/#{params[:page]}.html.erb"))
+  def home
   end
 
 end
