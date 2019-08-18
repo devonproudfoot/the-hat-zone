@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   get 'about', to: 'pages#about'
 
-  resources :hats, only: [:show, :index, :new, :create]
+  resources :hats, only: [:show, :index, :new, :create] do
+    resources :comments, only: [:create]
+  end
 
 end

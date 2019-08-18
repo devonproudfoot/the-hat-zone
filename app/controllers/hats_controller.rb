@@ -7,6 +7,7 @@ class HatsController < ApplicationController
 
   def show
     @hat = Hat.find(params[:id])
+    @comment = Comment.new
   end
   
   def new
