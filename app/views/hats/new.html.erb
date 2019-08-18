@@ -1,9 +1,9 @@
 <div class="booyah-box col-10 offset-1">
-
+<h1>Add a new hat</h1>
   <%= simple_form_for @hat do |f| %>
     <%= f.input :name %>
-    <%= f.input :brand %>
-    <%= f.input :style %>
+    <%= f.input :brand, collection: [ "New Era", "'47 Brand", "Ebbets Field Flannels", "Adidas" ] %>
+    <%= f.input :style, collection: [ 'Dad Hat', 'Flat Brim', 'Knit Hat', '5 Panel', 'Wool Hat' ] %>
     <%= f.input :team %>
     <%= f.input :color %>
     <br />
