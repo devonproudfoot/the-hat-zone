@@ -46,6 +46,11 @@
               <% end %>
             </li>
           <% end %>
+          <% if user_signed_in? && current_user.admin? %>
+            <%= link_to new_hat_path, class: 'nav-link' do %>
+              Add a hat
+            <% end %>
+          <% end %>
           <li class="nav-item">
             <%= link_to about_path, class: 'nav-link' do %>
               About
