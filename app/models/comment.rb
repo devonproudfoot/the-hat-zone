@@ -5,4 +5,13 @@ class Comment < ApplicationRecord
 
   validates :rating, presence: true
   validates :message, presence: true
+
+  RATINGS = [
+    '*',
+    '**',
+    '***',
+    '****',
+    '*****'
+  ]
+
 end

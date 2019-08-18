@@ -1,5 +1,6 @@
 class HatsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
+  before_action :is_admin?, only: [:new, :create]
 
   def index
     @hats = Hat.all
@@ -27,6 +28,13 @@ class HatsController < ApplicationController
 
   def hat_params
     params.require(:hat).permit(:name, :brand, :color, :style, :team)
+  end
+
+  def is_admin?
+    unless current_user.admin?
+      redirect_to root_path
+      flash[:alert] = "You need to be an admin to add hats!"
+    end
   end
 
 end
