@@ -35,12 +35,12 @@
   </div>
   <!-- end modal --->
 </div>
-<div class="row text-center">  
+<div class="row">  
   <% @hat.comments.each do |comment| %>
     <div class="col-12 col-sm-6">
       <blockquote>
         <b>
-          <%= comment.rating.length.times do %>
+          <%= comment.rating.length.times do |f| %>
             <i class="fa fa-star"></i>
           <% end %>
         </b> -
