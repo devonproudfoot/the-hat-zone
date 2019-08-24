@@ -57,8 +57,15 @@
             <% end %>
           </li>
         </ul>
+
+      <%= form_tag hats_path, method: :get, class: 'form-inline my-2 my-lg-0' do %>
+        <%= text_field_tag 'term', params[:term], placeholder: 'search hats', class: 'form-control mr-sm-2' %>
+        <%= submit_tag 'Search', class: 'btn btn-dark' %>
+      <% end %>
       </div>
     </nav>
+
+  <!-- end navbar --->
 
     <% if notice.present? %>
       <p class="notice"><%= notice %></p>
@@ -67,7 +74,6 @@
       <p class="alert"><%= alert %></p>
     <% end %>
 
-  <!-- end navbar --->
     <%= yield %>
   </body>
 </html>

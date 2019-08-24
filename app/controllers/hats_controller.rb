@@ -3,7 +3,11 @@ class HatsController < ApplicationController
   before_action :is_admin?, only: [:new, :create]
 
   def index
-    @hats = Hat.all
+    if params[:term]
+      @hats = Hat.search_by_descriptions(params[:term])
+    else
+      @hats = Hat.all
+    end
   end
 
   def show
