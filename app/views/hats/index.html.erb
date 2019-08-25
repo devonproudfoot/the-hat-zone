@@ -1,5 +1,26 @@
-<% @hats.each do |hat| %>
-  <div class="booyah-box col-10 offset-1">
-    <%= link_to hat.name, hat_path(hat) %>
-  </div>
-<% end %>
+<div class="booyah-box"> 
+  <% if @hats.count == 0 %>
+    <h2 class="text-center">No hats found! Please refine your search!</h2>
+  <% else %>  
+    <table class="table">
+      <tr>
+        <th><%= link_to 'ID', :sort => 'id' %></th>
+        <th><%= link_to 'Name', :sort => 'name' %></th>
+        <th><%= link_to 'Color', :sort => 'color' %></th>
+        <th><%= link_to 'Brand', :sort => 'brand' %></th>
+        <th><%= link_to 'Style', :sort => 'style' %></th>
+        <th><%= link_to 'Team', :sort => 'team' %></th>
+      </tr>
+      <% @hats.each do |hat| %>
+        <tr>
+          <td><%= hat.id %></td>
+          <td><%= link_to hat.name %></td>
+          <td><%= hat.color %></td>
+          <td><%= hat.brand %></td>
+          <td><%= hat.style %></td>
+          <td><%= hat.team %></td>
+        </tr>
+      <% end %>
+    </table>
+  <% end %>
+</div>

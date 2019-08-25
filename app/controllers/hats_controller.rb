@@ -4,9 +4,9 @@ class HatsController < ApplicationController
 
   def index
     if params[:term]
-      @hats = Hat.search_by_descriptions(params[:term])
+      @hats = Hat.search_by_descriptions(params[:term]).order(params[:sort])
     else
-      @hats = Hat.all
+      @hats = Hat.order(params[:sort])
     end
   end
 
