@@ -1,12 +1,13 @@
 class HatsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
   before_action :is_admin?, only: [:new, :create]
+  helper_method :sort_column, :sort_direction
 
   def index
     if params[:term]
       @hats = Hat.search_by_descriptions(params[:term]).order(params[:sort])
     else
-      @hats = Hat.order(params[:sort])
+      @hats = Hat.order(sort_column + ' ' + sort_direction)
     end
   end
 
@@ -32,6 +33,14 @@ class HatsController < ApplicationController
 
   def hat_params
     params.require(:hat).permit(:name, :brand, :color, :style, :team)
+  end
+
+  def sort_column
+    params[:sort] || 'id'
+  end
+
+  def sort_direction
+    params[:direction] || 'asc'
   end
 
   def is_admin?

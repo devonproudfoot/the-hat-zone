@@ -57,3 +57,20 @@ blockquote p {
 }
 
 /* back to mine */
+
+thead a {
+  color:white;
+}
+
+thead a:hover {
+  color: #FFB81C;
+}
+
+th {
+  font-weight: 200;
+  font-size: 30px;
+}
+
+th, tr {
+  height: 80px;
+}

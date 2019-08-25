@@ -3,24 +3,28 @@
     <h2 class="text-center">No hats found! Please refine your search!</h2>
   <% else %>  
     <table class="table">
-      <tr>
-        <th><%= link_to 'ID', :sort => 'id' %></th>
-        <th><%= link_to 'Name', :sort => 'name' %></th>
-        <th><%= link_to 'Color', :sort => 'color' %></th>
-        <th><%= link_to 'Brand', :sort => 'brand' %></th>
-        <th><%= link_to 'Style', :sort => 'style' %></th>
-        <th><%= link_to 'Team', :sort => 'team' %></th>
-      </tr>
-      <% @hats.each do |hat| %>
+      <thead class="thead-dark">  
         <tr>
-          <td><%= hat.id %></td>
-          <td><%= link_to hat.name %></td>
-          <td><%= hat.color %></td>
-          <td><%= hat.brand %></td>
-          <td><%= hat.style %></td>
-          <td><%= hat.team %></td>
+          <th><%= sortable 'id', 'ID' %></th>
+          <th><%= sortable 'name' %></th>
+          <th><%= sortable 'color' %></th>
+          <th><%= sortable 'brand' %></th>
+          <th><%= sortable 'style' %></th>
+          <th><%= sortable 'team' %></th>
         </tr>
-      <% end %>
+      </thead>
+      <tbody>
+        <% @hats.each do |hat| %>
+          <tr>
+            <td><%= hat.id %></td>
+            <td><%= link_to hat.name %></td>
+            <td><%= hat.color.titleize %></td>
+            <td><%= hat.brand %></td>
+            <td><%= hat.style.titleize %></td>
+            <td><%= hat.team %></td>
+          </tr>
+        <% end %>
+      </tbody>
     </table>
   <% end %>
 </div>
