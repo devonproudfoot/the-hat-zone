@@ -17,7 +17,7 @@
         <% @hats.each do |hat| %>
           <tr>
             <td><%= hat.id %></td>
-            <td><%= link_to hat.name %></td>
+            <td><%= link_to hat.name, hat_path(hat) %></td>
             <td><%= hat.color.titleize %></td>
             <td><%= hat.brand %></td>
             <td><%= hat.style.titleize %></td>

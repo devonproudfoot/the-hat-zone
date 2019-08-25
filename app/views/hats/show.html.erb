@@ -3,13 +3,17 @@
   <p>Color: <%= @hat.color.capitalize %></p>
   <p>Brand: <%= @hat.brand %></p>
   <p>Style: <%= @hat.style.titleize %></p>
-  <br />
-  <!-- Button trigger modal -->
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#commentModal">
-    Add a comment
-  </button>
-  <!-- end button --->
 
+  <!-- Button trigger modal -->
+  <% if current_user && user_signed_in? %>  
+    <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#commentModal">
+      Add a comment
+    </button>
+  <% else %>
+    <h2><span class='badge badge-secondary'>Sign in to add a comment!</span></h2>
+  <% end %>
+  <!-- end button --->
+  <br />
   <!-- start modal --->
   <div class="modal fade" id="commentModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -26,8 +30,8 @@
             <%= f.input :rating, select: :as, collection: Comment::RATINGS %>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <%= f.submit "Add a comment", class: "btn btn-primary" %>
+            <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+            <%= f.submit "Add a comment", class: "btn btn-dark" %>
           </div>
         <% end %>
       </div>
