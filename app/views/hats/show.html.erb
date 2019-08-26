@@ -31,7 +31,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
-            <%= f.submit "Add a comment", class: "btn btn-dark" %>
+            <%= f.submit "Add comment", class: "btn btn-dark" %>
           </div>
         <% end %>
       </div>
@@ -44,7 +44,7 @@
     <div class="col-12 col-sm-6">
       <blockquote>
         <b>
-          <%= comment.rating.length.times do |f| %>
+          <% comment.stars.times do %>
             <i class="fa fa-star"></i>
           <% end %>
         </b> -
