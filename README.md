@@ -1,4 +1,4 @@
-# ~the hat zone~
+# the hat zone
 
 [View project](the-hat-zone.herokuapp.com)
 
