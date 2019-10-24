@@ -14,12 +14,12 @@ The home page allows users to create an account, or sign in from the navigation 
 
 Clicking on the "View Hats" option in the navigation bar will allow users to browse through all hats, sorting them by clicking the rows at the top of the list of hats.  A search bar can also be found in the top right hand side of the website.
 
-![Index page](/readme_images/index.html)
+![Index page](/readme_images/index.png)
 
 Selecting a hat will display more information, as well as display all of the comments on the hat.
 
-![Show page](/readme_images/show.html)
+![Show page](/readme_images/show.png)
 
 To add a new comment, users need to be logged in.  Click the "Add comment button and fill information in the pop-up window."
 
-![Adding a comment](/readme_images/comment.html)
+![Adding a comment](/readme_images/comment.png)
