@@ -1,7 +1,5 @@
 # the hat zone
 
-**_An application for displaying information about a hat collection_**
-
 [View project](https://the-hat-zone.herokuapp.com)
 
 ## Running locally
